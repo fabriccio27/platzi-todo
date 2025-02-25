@@ -6,6 +6,11 @@
   </li>
 </ul>
 <hr />
-<h2>My name is {{name}}</h2>
+<h2>My name is {{inputName}}</h2>
 <hr />
+<input type="text" [value]="inputName" />
 <button [disabled]="isButtonDisabled">Click me</button>
+<hr />
+
+<h2> {{person.name}}</h2>
+<img [src]="person.avatar" alt="an avatar" />

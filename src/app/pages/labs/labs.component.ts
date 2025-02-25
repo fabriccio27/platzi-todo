@@ -15,6 +15,11 @@ export class LabsComponent {
     'Say hello world',
     'Use directives'
   ];
-  name = 'Fabricio';
-  isButtonDisabled = this.name.toLowerCase() !== 'fabricio';
+  inputName = 'Fabricio';
+  isButtonDisabled = true;
+  person = {
+    name: 'jorge',
+    age: 31,
+    avatar: 'https://w3schools.com/howto/img_avatar.png'
+  }
 }
