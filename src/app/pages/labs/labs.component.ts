@@ -15,4 +15,5 @@ export class LabsComponent {
     'Say hello world',
     'Use directives'
   ];
+  name = 'Fabricio';
 }
