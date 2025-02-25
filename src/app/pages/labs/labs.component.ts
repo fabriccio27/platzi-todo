@@ -16,4 +16,5 @@ export class LabsComponent {
     'Use directives'
   ];
   name = 'Fabricio';
+  isButtonDisabled = this.name.toLowerCase() !== 'fabricio';
 }
