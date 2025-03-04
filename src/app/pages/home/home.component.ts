@@ -13,4 +13,9 @@ export class HomeComponent {
   'Work at your best current capacity',
   'Rest some'
  ])
+
+ changeHandler(event:Event) {
+  const input = event.target as HTMLInputElement;
+  this.tasks.update((prevState) =>[...prevState, input.value]);
+ }
 }
