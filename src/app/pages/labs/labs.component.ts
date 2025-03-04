@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -15,7 +15,7 @@ export class LabsComponent {
     'Say hello world',
     'Use directives'
   ];
-  inputName = 'Fabricio';
+  inputName = signal('Fabricio');
   isButtonDisabled = true;
   person = {
     name: 'jorge',
@@ -31,5 +31,9 @@ export class LabsComponent {
   }
   hotKeysHandler() {
     alert('hot keys bro')
+  }
+  liveChangeHandler(event: KeyboardEvent) {
+    const input = event.target as HTMLInputElement;
+    this.inputName.set(input.value);
   }
 }

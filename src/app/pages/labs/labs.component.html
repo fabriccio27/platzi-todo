@@ -6,9 +6,7 @@
   </li>
 </ul>
 <hr />
-<h2>My name is {{inputName}}</h2>
-<hr />
-<input type="text" [value]="inputName" />
+<h2>My name is {{inputName()}}</h2>
 <button [disabled]="isButtonDisabled">Click me</button>
 <hr />
 
@@ -23,3 +21,7 @@
 <input type="text" (keydown)="keyboardHandler($event)" value="Fabricio" />
 <p>(keyboard shift t)</p>
 <input type="text" (keydown.shift.t)="hotKeysHandler()" />
+<hr />
+<h2> signals </h2>
+<input type="text" (keydown)="liveChangeHandler($event)"/>
+<p>{{inputName()}}</p>
