@@ -22,4 +22,14 @@ export class LabsComponent {
     age: 31,
     avatar: 'https://w3schools.com/howto/img_avatar.png'
   }
+  changeHandler(event:Event) {
+    console.log(event.target);
+  }
+  keyboardHandler(event: KeyboardEvent) {
+    const input = event.target as HTMLInputElement;
+    console.log(input.value);
+  }
+  hotKeysHandler() {
+    alert('hot keys bro')
+  }
 }

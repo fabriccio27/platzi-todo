@@ -14,3 +14,12 @@
 
 <h2> {{person.name}}</h2>
 <img [src]="person.avatar" alt="an avatar" />
+
+<hr />
+<h2> eventos </h2>
+<p>(change)</p>
+<input type="number" (change)="changeHandler($event)" value="4"/>
+<p>(keyboard)</p>
+<input type="text" (keydown)="keyboardHandler($event)" value="Fabricio" />
+<p>(keyboard shift t)</p>
+<input type="text" (keydown.shift.t)="hotKeysHandler()" />
