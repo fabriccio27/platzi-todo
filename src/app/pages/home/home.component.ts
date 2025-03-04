@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, signal } from '@angular/core';
+import { Task } from '../../models/task.model';
 
 @Component({
   selector: 'app-home',
@@ -8,16 +9,43 @@ import { Component, signal } from '@angular/core';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
- tasks = signal([
-  'Feel better',
-  'Work at your best current capacity',
-  'Rest some'
+ tasks = signal<Task[]>([
+  {
+    id: 1,
+    title: 'Instalar Angular CLI',
+    completed: false
+  },
+  {
+    id: 2,
+    title: 'Crear proyecto',
+    completed: false
+  },
+  {
+    id: 3,
+    title: 'Agregar componente',
+    completed: false
+  },
+  {
+    id: 4,
+    title: 'Agregar servicio',
+    completed: false
+  },
  ])
 
  changeHandler(event:Event) {
   const input = event.target as HTMLInputElement;
-  this.tasks.update((prevState) =>[...prevState, input.value]);
+  this.addTask(input.value);
  }
+
+ addTask(title:string) {
+  const newTask ={
+    id: Date.now(),
+    title,
+    completed:false
+  }
+  this.tasks.update((prevState) =>[...prevState, newTask]);
+ }
+
  deleteTask(index: number) {
   this.tasks.update((prevState) => prevState.filter((_, position) => position !== index));
  }
