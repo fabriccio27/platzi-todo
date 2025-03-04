@@ -25,3 +25,6 @@
 <h2> signals </h2>
 <input type="text" (keydown)="liveChangeHandler($event)"/>
 <p>{{inputName()}}</p>
+<hr />
+<input type="color" [formControl]="colorCtrl"/>
+<p>Color: {{colorCtrl.value}}</p>
