@@ -49,4 +49,12 @@ export class HomeComponent {
  deleteTask(index: number) {
   this.tasks.update((prevState) => prevState.filter((_, position) => position !== index));
  }
+ onClickHandler(index: number) {
+  this.tasks.update((prevState) => prevState.map((task, position) => {
+    if (index === position) {
+      return {...task, completed: !task.completed}
+    }
+    return task;
+  }));
+ }
 }
