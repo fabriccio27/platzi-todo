@@ -18,4 +18,7 @@ export class HomeComponent {
   const input = event.target as HTMLInputElement;
   this.tasks.update((prevState) =>[...prevState, input.value]);
  }
+ deleteTask(index: number) {
+  this.tasks.update((prevState) => prevState.filter((_, position) => position !== index));
+ }
 }
